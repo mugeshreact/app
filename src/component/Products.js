@@ -27,9 +27,12 @@ const Products = () => {
       const settings = {
         dots: true,
         infinite: false,
-        speed: 500,
+        speed: 2000,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        autoplay: true,
+      autoplaySpeed: 2000,
+      cssEase: "linear"
       };
     
 
@@ -40,6 +43,7 @@ const Products = () => {
   const baseURL = "https://dummyjson.com/products";  
   const [products, setProducts] = useState(null);
   const [ismodal,setIsmodal] = useState(null);
+  const [search,setSearch] = useState(null);
   const ModalProducts = (id) => {
     let updatedProducts = products.products.filter((Products) => Products.id === id);
     console.log(updatedProducts,"resp")
@@ -52,7 +56,7 @@ const Products = () => {
       setProducts(response.data);
     });
   }, []);
-console.log(ismodal,'mugesh')
+
   if (!products){ return null;}
 
   return (

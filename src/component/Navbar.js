@@ -3,7 +3,7 @@ import styles from './Products.module.css'
 function Navbar() {
   return (
     <div className={styles.navbar}>
-        <input placeholder='search.....'></input>
+        <input placeholder='search.....' ></input>
     </div>
   )
 }
