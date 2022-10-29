@@ -9,12 +9,12 @@ padding:1rem;
 border-radius: 10px;
 align-items: center;
 margin: 1rem;
-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 margin-bottom: 1rem;
 text-align: center;
 }
 .item:hover{
-box-shadow: rgba(250, 4, 4, 0.3) 0px 19px 38px, rgb(239, 4, 4) 0px 15px 12px;
+box-shadow: rgba(0, 0, 0, 0.02) 0px 19px 38px, rgb(239, 4, 4) 0px 15px 12px;
 }
 .img{
     max-width: 100%;
@@ -34,18 +34,21 @@ box-shadow: rgba(250, 4, 4, 0.3) 0px 19px 38px, rgb(239, 4, 4) 0px 15px 12px;
     color: rgb(22, 225, 22);
 }
 .navbar{
+    display: flex;
+    color: red;
+    align-content: space-between;
 width: 100vw;
 padding: 5px;
-background-color: blue;
+background-color: rgb(109, 109, 231);
 justify-content: center;
 }
-.navbar input{
-    display: flex;
-    align-items: flex-end;
-    width: 50%;
-    padding: 2px;
-    margin: auto;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-}
+
+ 
+  @media only screen and (max-width: 768px){
+    .item{
+        width: 40%;}
+  }
+  @media only screen and (max-width: 480px){
+    .item{
+        width: 80%;}
+  }
