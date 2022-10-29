@@ -10,9 +10,6 @@ import Slider from "react-slick";
 import Navbar from "./Navbar";
 import { TableSortLabel } from "@mui/material";
 
-
-
-
 const Products = () => {
     const style = {
         position: 'absolute',
@@ -65,13 +62,10 @@ function rendering(str){
   function reading(e){
 
     rendering(e.target.value)
-     
-     
-   
+
   }
   console.log(sorting,'remo')
   
-
   const ModalProducts = (id) => {
     let updatedProducts = products.products.filter((Products) => Products.id === id);
     console.log(updatedProducts,"resp")
@@ -119,8 +113,6 @@ function rendering(str){
        {params.length>0?params.map((props)   => {
         const { id, title, price,images,description,category} = props;
         return (
-
-        
 
           <div className={styles.item} key={id}>
             <img src={images[0]} className={styles.img}/>
