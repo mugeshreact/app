@@ -46,6 +46,8 @@ const Products = () => {
   const [load, setload] = useState([]);
   const [sorting,setSorting] = useState([]);
   
+  
+  
 function rendering(str){
   console.log('hello',str)
   const loading = sorting?.filter((val)=>{
@@ -53,9 +55,15 @@ function rendering(str){
       return true;
     }
     else if(val.title.toLowerCase().includes(str.toLowerCase())){
+      
       return true;
-    }  
+    } 
+    else if(val.description.toLowerCase().includes(str.toLowerCase())){
+      return true;
+    } 
+    
    })
+   console.log("tell",loading,sorting)
    setload(loading);
 }
 
@@ -79,10 +87,14 @@ function rendering(str){
   useEffect(() => {
     axios.get(baseURL).then((response) => {
       setProducts(response.data);
+      
     });
     rendering('')
   
   }, []);
+
+  
+
 
   useEffect(()=>{
     rendering('')
@@ -111,7 +123,7 @@ function rendering(str){
 
         {console.log('mug',products.products)}
        {params.length>0?params.map((props)   => {
-        const { id, title, price,images,description,category} = props;
+        const { id, title, price,images,description,rating} = props;
         return (
 
           <div className={styles.item} key={id}>
@@ -119,7 +131,7 @@ function rendering(str){
             <h2 className={styles.title}>{title}</h2>
             <h3 className={styles.price}>${price}</h3>
             <h5 className={styles.description}>{description}</h5>
-            <p className={styles.review}>reviews {category}</p>
+            <p className={styles.rating}>reviews {rating}</p>
             <Button onClick={()=>{ModalProducts(id)}} >Know More....</Button>
           </div>
         );

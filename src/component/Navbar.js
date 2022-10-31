@@ -1,4 +1,5 @@
-import * as React from 'react';
+import {useEffect} from 'react';
+import Products from './Products';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -7,11 +8,16 @@ import Select from '@mui/material/Select';
 
 export default function Navbar({products,setSorting}) {
 
+  useEffect(()=>{
+    setSorting(products?.products)
+  },[])
+  
   const handleChange = (e) => {
     
  
   const sort = products.products.filter((val)=>{
     if (e.target.value == ''){
+      
       return true;
     }
     else if(val.category == e.target.value){
@@ -36,7 +42,7 @@ export default function Navbar({products,setSorting}) {
           label="category"
           onChange={handleChange}
         >
-          <MenuItem value={"smartphone"}>smartphone</MenuItem>
+          <MenuItem value={"smartphones"}>smartphone</MenuItem>
           <MenuItem value={"laptops"}>laptops</MenuItem>
           <MenuItem value={"fragrances"}>fragrances</MenuItem>
           <MenuItem value={"skincare"}>skincare</MenuItem>
